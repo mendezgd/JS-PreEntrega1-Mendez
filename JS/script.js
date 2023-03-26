@@ -44,6 +44,7 @@ if (edadUsuario < 18) {
                     alert("tu carrita esta vacio");
                 } else {
                     opcion = prompt("está seguro que desea finalizar esta compra \n-Si \n-No");
+                    console.log ("Usted deberá abonar un total de: " + total * iva + " incluido el iva")
                 }
                 break;
             default:
