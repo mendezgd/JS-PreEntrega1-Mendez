@@ -6,9 +6,15 @@ let awp = 4700
 const iva = 1.21
 let opcion = 0
 let total = 0
+let totalIva = 0
 
-function totalIva(item1, item2) {
-    console.log("debe abonar: $" + total * iva + " " + "con iva incluido");
+/* declaracion de función, se reutiliza en todos los case  */
+function multi(parcial, impuesto) {
+    totalIva = total * iva;
+}
+
+function show(mensaje) {
+    alert(mensaje);
 }
 
 /* Usuario ingresa su nombre y edad, en caso de ser menor, no podrá comprar un arma */
@@ -25,22 +31,30 @@ if (edadUsuario < 18) {
             case "1":
                 alert("Seleccionaste Ak-47");
                 total += ak;
-                totalIva();
+                multi();
+                show("lleva gastados un total de:");
+                show(totalIva);
                 break;
             case "2":
                 alert("Seleccionaste M4A1");
                 total += m4a1;
-                totalIva();
+                multi();
+                show("lleva gastados un total de:");
+                show(totalIva);
                 break;
             case "3":
                 alert("Seleccionaste Desert Eagle");
                 total += desert;
-                totalIva();
+                multi();
+                show("lleva gastados un total de:");
+                show(totalIva);
                 break;
             case "4":
                 alert("Seleccionaste AWP");
                 total += awp;
-                totalIva();
+                multi();
+                show("lleva gastados un total de:");
+                show(totalIva);
                 break;
             case "5":
                 alert("gracias vuelvan pronto");
@@ -50,7 +64,9 @@ if (edadUsuario < 18) {
                     alert("tu carrito esta vacio");
                 } else {
                     opcion = prompt("está seguro que desea finalizar esta compra \n-Si \n-No");
-                    totalIva();
+                    multi();
+                    show("deberá abonar un total de:");
+                    show(totalIva);
                 }
                 break;
             default:
