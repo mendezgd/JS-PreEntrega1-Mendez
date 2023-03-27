@@ -13,10 +13,6 @@ function multi(parcial, impuesto) {
     totalIva = total * iva;
 }
 
-function show(mensaje) {
-    alert(mensaje);
-}
-
 /* Usuario ingresa su nombre y edad, en caso de ser menor, no podrá comprar un arma */
 let nombreUsuario = prompt("ingrese su nombre");
 alert("Bienvenido" + " " + nombreUsuario);
@@ -32,29 +28,25 @@ if (edadUsuario < 18) {
                 alert("Seleccionaste Ak-47");
                 total += ak;
                 multi();
-                show("lleva gastados un total de:");
-                show(totalIva);
+                alert("lleva gastados un total de: $" + totalIva + " con iva incluido");
                 break;
             case "2":
                 alert("Seleccionaste M4A1");
                 total += m4a1;
                 multi();
-                show("lleva gastados un total de:");
-                show(totalIva);
+                alert("lleva gastados un total de: $" + totalIva + " con iva incluido");
                 break;
             case "3":
                 alert("Seleccionaste Desert Eagle");
                 total += desert;
                 multi();
-                show("lleva gastados un total de:");
-                show(totalIva);
+                alert("lleva gastados un total de: $" + totalIva + " con iva incluido");
                 break;
             case "4":
                 alert("Seleccionaste AWP");
                 total += awp;
                 multi();
-                show("lleva gastados un total de:");
-                show(totalIva);
+                alert("lleva gastados un total de: $" + totalIva + " con iva incluido");
                 break;
             case "5":
                 alert("gracias vuelvan pronto");
@@ -65,8 +57,7 @@ if (edadUsuario < 18) {
                 } else {
                     opcion = prompt("está seguro que desea finalizar esta compra \n-Si \n-No");
                     multi();
-                    show("deberá abonar un total de:");
-                    show(totalIva);
+                    alert("deberás abonar un total de: $" + totalIva + " con iva incluido")
                 }
                 break;
             default:
